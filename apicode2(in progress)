@@ -1,4 +1,9 @@
-String url = "https://docs.etherscan.io/api-endpoints/geth-parity-proxy#eth_getblockbynumber"; 
+import java.io.*;
+import java.net.*;
+
+public class APICode {
+    public static void main(String[] args) throws IOException{
+        String url = "https://docs.etherscan.io/api-endpoints/geth-parity-proxy#eth_getblockbynumber"; 
         String FileName = "storedAPI1.json";
         
         FileWriter fileWriter = new FileWriter(FileName);
@@ -12,5 +17,9 @@ String url = "https://docs.etherscan.io/api-endpoints/geth-parity-proxy#eth_getb
         String output;
         
         while () {
-        
+           
         }
+
+
+    }
+}
