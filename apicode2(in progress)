@@ -1,0 +1,16 @@
+String url = "https://docs.etherscan.io/api-endpoints/geth-parity-proxy#eth_getblockbynumber"; 
+        String FileName = "storedAPI1.json";
+        
+        FileWriter fileWriter = new FileWriter(FileName);
+
+        URL apiURL = new URL(url);
+        HttpURLConnection connection = (HttpURLConnection) apiURL.openConnection();
+        connection.setRequestMethod("GET");
+        
+        BufferedReader buffRead = new BufferedReader(new InputStreamReader((connection.getInputStream())));
+        String response = "";
+        String output;
+        
+        while () {
+        
+        }
