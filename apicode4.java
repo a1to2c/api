@@ -1,6 +1,6 @@
 public class APICode {
     public static void main(String[] args) throws IOException{
-        String url = "https://docs.etherscan.io/api-endpoints/geth-parity-proxy#eth_getblockbynumber"; 
+        String url = "https://api.etherscan.io/api?module=proxy&action=eth_getBlockByNumber&tag=0xC36B3C&boolean=true&apikey=YourApiKeyToken"; 
         String FileName = "storedAPI1.json";
         
         FileWriter fileWriter = new FileWriter(FileName);
