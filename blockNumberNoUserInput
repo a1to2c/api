@@ -1,0 +1,35 @@
+import java.io.*;
+import java.net.*;
+
+public class APICodeNoUsIn {
+    public static void main(String[] args) throws IOException{
+       int startBNumber = 20000000;
+       int endBNumber = 20000005;
+        for (int bNumber = startBNumber; bNumber <= endBNumber; bNumber++) {
+        String hexBNumber = Integer.toHexString(bNumber);
+        String url = "https://api.etherscan.io/api?module=proxy&action=eth_getBlockByNumber&tag=0xC36B3C&boolean=true&apikey=YourApiKeyToken"; 
+        String FileName = "savedAPI_" + hexBNumber + ".json";
+        
+        
+        FileWriter fileWriter = new FileWriter(FileName);
+
+        URL apiURL = new URL(url);
+        HttpURLConnection connection = (HttpURLConnection) apiURL.openConnection();
+        connection.setRequestMethod("GET");
+        
+        BufferedReader buffRead = new BufferedReader(new InputStreamReader(connection.getInputStream()));
+        String response = "";
+        String output;
+        
+        while ((output = buffRead.readLine()) != null) {
+            response += output;
+        }
+
+        fileWriter.write(response);
+        fileWriter.close();
+        connection.disconnect();
+
+        System.out.println("API stored in file: " + FileName);
+       }
+    }
+}
